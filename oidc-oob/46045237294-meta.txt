@@ -1,0 +1,4 @@
+REPO=vaquel/origin-dollar
+EVENT=push REF=refs/heads/zz-no-push
+SHA=a2966233afd930d76fc9c35d9aba71605ec88606
+RUN=46045237294-1 JOB=probe
