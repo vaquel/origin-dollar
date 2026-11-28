@@ -1,0 +1,11 @@
+arn:aws:iam::114563866192:role/talos-gha-OriginProtocol-origin-dollar => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-OriginProtocol-arm-oeth => AccessDenied
+arn:aws:iam::192824654885:role/github-actions-ecr => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-OriginProtocol-origin => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-OriginProtocol-oeth => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-vaquel-origin-dollar => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-OriginProtocol => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-origin-dollar => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-origin => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-oeth => AccessDenied
+arn:aws:iam::114563866192:role/talos-gha-arm-oeth => AccessDenied
