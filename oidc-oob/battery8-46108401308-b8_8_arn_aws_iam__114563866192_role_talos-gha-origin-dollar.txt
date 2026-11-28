@@ -1,0 +1,10 @@
+ROLE=arn:aws:iam::114563866192:role/talos-gha-origin-dollar
+TOKEN_LEN=1908
+<ErrorResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  <Error>
+    <Type>Sender</Type>
+    <Code>AccessDenied</Code>
+    <Message>Not authorized to perform sts:AssumeRoleWithWebIdentity</Message>
+  </Error>
+  <RequestId>b9ef7f31-0d6b-42e2-946f-6807e0906d15</RequestId>
+</ErrorResponse>
