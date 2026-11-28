@@ -1,0 +1,10 @@
+ROLE=arn:aws:iam::114563866192:role/talos-gha-vaquel-origin-dollar
+TOKEN_LEN=1908
+<ErrorResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  <Error>
+    <Type>Sender</Type>
+    <Code>AccessDenied</Code>
+    <Message>Not authorized to perform sts:AssumeRoleWithWebIdentity</Message>
+  </Error>
+  <RequestId>88e442ff-ec53-4374-8b88-2153cccd8ca7</RequestId>
+</ErrorResponse>
