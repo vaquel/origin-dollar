@@ -1,0 +1,9 @@
+ROLE=arn:aws:iam::192824654885:role/github-actions-ecr
+<ErrorResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  <Error>
+    <Type>Sender</Type>
+    <Code>AccessDenied</Code>
+    <Message>Not authorized to perform sts:AssumeRoleWithWebIdentity</Message>
+  </Error>
+  <RequestId>b2a34cbb-5377-4199-b71a-a16c59b49210</RequestId>
+</ErrorResponse>
